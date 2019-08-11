@@ -16,3 +16,8 @@ cloud functions内部で環境変数にアクセスしたい場合は、`functio
 firebase functions:config:set \ api.urls.0="https:sample.com/v1/api/post" \
 api.urls.1="https:sample.com/v1/api/get"
 ```
+
+### reqestBody関数はこれで検証する
+
+`url -X POST -H "Content-Type:application/json"  -d '{"messae":"hello world!"}' https://us-central1-fir-cloudfunctions-test.cloudfunctions.net/requestBody`
+
