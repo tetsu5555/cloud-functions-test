@@ -27,3 +27,6 @@ const urls = functions.config().urls
 
 `url -X POST -H "Content-Type:application/json"  -d '{"message":"hello world!"}' https://us-central1-fir-cloudfunctions-test.cloudfunctions.net/requestBody`
 
+### checkEmailsはこんな感じで試す
+
+`curl https://us-central1-fir-cloudfunctions-test.cloudfunctions.net/checkEmails?mail=hogehgoe`
