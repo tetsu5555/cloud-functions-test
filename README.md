@@ -17,7 +17,13 @@ firebase functions:config:set \ api.urls.0="https:sample.com/v1/api/post" \
 api.urls.1="https:sample.com/v1/api/get"
 ```
 
+以下のような形で環境変数にアクセスする
+
+```
+const urls = functions.config().urls
+```
+
 ### reqestBody関数はこれで検証する
 
-`url -X POST -H "Content-Type:application/json"  -d '{"messae":"hello world!"}' https://us-central1-fir-cloudfunctions-test.cloudfunctions.net/requestBody`
+`url -X POST -H "Content-Type:application/json"  -d '{"message":"hello world!"}' https://us-central1-fir-cloudfunctions-test.cloudfunctions.net/requestBody`
 
