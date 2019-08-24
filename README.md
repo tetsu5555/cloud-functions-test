@@ -8,6 +8,12 @@ https://scrapbox.io/forme/firebase_cloud_functions
 
 cloud functions内部で環境変数にアクセスしたい場合は、`functions.config()`でアクセスできる
 
+## 特定の関数のみデプロイする
+
+```
+firebase deploy --only functions:<function name>
+```
+
 ### 環境変数に配列を設定する
 
 ↓のようにインデックスを指定する
