@@ -3,7 +3,7 @@ import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
 
 // 環境変数のemail確認 & クライアントから送信されたtokenを検証する
-export const verifyEmailAndToken = functions.https.onRequest((req, res) => {
+export const VerifyEmailAndToken = functions.https.onRequest((req, res) => {
     const { token, email } = req.body;
     const validEmails = functions.config().emails
     const emailOk = validEmails.includes(email);
