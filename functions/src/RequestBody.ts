@@ -1,6 +1,6 @@
-const functions = require('firebase-functions');
+import * as functions from 'firebase-functions';
 
-exports.requestBody = functions.https.onRequest((request, response) => {
+export const requestBody = functions.https.onRequest((request, response) => {
     if (request.body.message === undefined) {
         // This is an error case, as "message" is required
         response.status(400).send('No message defined!');

@@ -1,15 +1,15 @@
 // The Cloud Functions for Firebase SDK to create Cloud Functions and setup triggers.
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
 
 // 環境変数のemail確認 & クライアントから送信されたtokenを検証する
-exports.verifyEmailAndToken = functions.https.onRequest((req, res) => {
+export const verifyEmailAndToken = functions.https.onRequest((req, res) => {
     const { token, email } = req.body;
     const validEmails = functions.config().emails
     const emailOk = validEmails.includes(email);
 
     if (!emailOk) {
-        const response = { "code": "auth/argument-error", "message": "invalid email", "uid": decodedToken.uid}
+        const response = { "code": "auth/argument-error", "message": "invalid email"}
         res.status(401).send(response);
         return
     }

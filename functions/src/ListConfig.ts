@@ -1,6 +1,6 @@
 // The Cloud Functions for Firebase SDK to create Cloud Functions and setup triggers.
-const functions = require('firebase-functions');
+import * as functions from 'firebase-functions';
 
-exports.listConfig = functions.https.onRequest((request, response) => {
+export const listConfig = functions.https.onRequest((request, response) => {
     response.send(functions.config());
 });
