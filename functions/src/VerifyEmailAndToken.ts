@@ -14,7 +14,7 @@ export const verifyEmailAndToken = functions.https.onRequest((req, res) => {
         return
     }
 
-    let checkRevoked = true;
+    const checkRevoked = true;
     admin.auth().verifyIdToken(token, checkRevoked)
         .then((decodedToken) => {
             const response = { "code": "auth/success", "message": "success", "uid": decodedToken.uid}
